@@ -1,4 +1,4 @@
-# Example
+# Usage
 
 ```
 const app = require('@maxdome/express')();

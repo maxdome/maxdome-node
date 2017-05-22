@@ -1,4 +1,4 @@
-# Example
+# Usage
 
 ```
 const httpAuth = require('@maxdome/http-auth')({
