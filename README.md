@@ -2,9 +2,11 @@
 
 To integrate in your application, see [skeleton/web](https://github.com/maxdome/maxdome-node-libs/tree/master/skeletons/web)
 
-# Installation
+#  Contributing
 
-## lerna
+## Installation
+
+### lerna
 
 See also: https://github.com/lerna/lerna#getting-started
 
@@ -13,7 +15,7 @@ See also: https://github.com/lerna/lerna#getting-started
   npm i -g lerna
   ```
 
-## maxdome-node-libs
+### maxdome-node-libs
 
 * After clone bootstrap all packages
   ```bash
@@ -22,7 +24,7 @@ See also: https://github.com/lerna/lerna#getting-started
   lerna bootstrap
   ```
 
-# Publishing
+## Publishing
 
 * Commit and push all changes **without** changing versions in the `package.json`
 * lerna
