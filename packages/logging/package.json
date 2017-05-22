@@ -1,0 +1,15 @@
+{
+  "engines": {
+    "node": "^7.6.0"
+  },
+  "name": "@maxdome/logging",
+  "version": "1.0.0",
+  "description": "",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "winston": "^2.1.0"
+  },
+  "devDependencies": {}
+}
