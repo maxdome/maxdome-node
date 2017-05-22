@@ -1,3 +1,7 @@
+# Usage
+
+To integrate in your application, see [skeleton/web](https://github.com/maxdome/maxdome-node-libs/tree/master/skeletons/web)
+
 # Installation
 
 ## lerna
