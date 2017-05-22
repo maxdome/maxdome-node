@@ -1,0 +1,18 @@
+{
+  "engines": {
+    "node": "^7.6.0"
+  },
+  "name": "@maxdome/swagger",
+  "version": "3.0.3",
+  "description": "",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@maxdome/version": "^1.0.0",
+    "express": "^4.15.2",
+    "swagger-parser": "^3.4.1",
+    "swagger-ui": "^2.2.0"
+  },
+  "devDependencies": {}
+}
