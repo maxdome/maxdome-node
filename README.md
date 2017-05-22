@@ -6,13 +6,15 @@ See also: https://github.com/lerna/lerna#getting-started
 
 * Install lerna globally
 ```bash
-npm i --g lerna
+npm i -g lerna
 ```
 
 ## maxdome-node-libs
 
 * After clone bootstrap all packages
 ```bash
+git clone https://github.com/maxdome/maxdome-node-libs.git
+cd maxdome-node-libs
 lerna bootstrap
 ```
 
