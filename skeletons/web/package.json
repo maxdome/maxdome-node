@@ -15,8 +15,8 @@
     "fmt": "maxdome-prettier",
     "start": "node src/web.js",
     "test": "npm run test-unit && npm run test-integration",
-    "test-integration": "mocha --recursive test/integration",
-    "test-unit": "mocha --recursive test/unit"
+    "test:integration": "mocha --recursive test/integration",
+    "test:unit": "mocha --recursive test/unit"
   },
   "dependencies": {
     "@maxdome/cors": "^1.0.0",
