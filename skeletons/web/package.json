@@ -1,0 +1,37 @@
+{
+  "private": true,
+  "engines": {
+    "node": "^7.6.0"
+  },
+  "name": "@maxdome/template",
+  "version": "1.0.0",
+  "description": "",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "nodemon",
+    "fmt": "maxdome-prettier",
+    "start": "node src/web.js",
+    "test": "npm run test-unit && npm run test-integration",
+    "test-integration": "mocha --recursive test/integration",
+    "test-unit": "mocha --recursive test/unit"
+  },
+  "dependencies": {
+    "@maxdome/cors": "^1.0.0",
+    "@maxdome/express": "^2.0.0",
+    "@maxdome/http-auth": "^1.0.0",
+    "@maxdome/info": "^2.1.0",
+    "@maxdome/logging": "^1.0.0",
+    "@maxdome/logging-middleware": "^1.0.0",
+    "@maxdome/swagger": "^3.0.2",
+    "dotenv-safe": "^4.0.3",
+    "express": "^4.15.2"
+  },
+  "devDependencies": {
+    "@maxdome/prettier": "^1.0.0",
+    "mocha": "^3.0.2",
+    "nodemon": "^1.11.0"
+  }
+}
