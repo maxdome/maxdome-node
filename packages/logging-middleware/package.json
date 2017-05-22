@@ -3,7 +3,7 @@
     "node": "^7.6.0"
   },
   "name": "@maxdome/logging-middleware",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "",
   "publishConfig": {
     "access": "public"
