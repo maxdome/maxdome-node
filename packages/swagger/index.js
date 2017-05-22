@@ -19,7 +19,9 @@ module.exports = ({ config: config = 'config/swagger.json' } = {}) => {
     }
   });
 
-  const swaggerUIDirname = path.dirname(require.resolve('swagger-ui/package.json'));
+  const swaggerUIDirname = path.dirname(
+    require.resolve('swagger-ui/package.json')
+  );
 
   let html;
   router.get('/', (req, res, next) => {
@@ -29,8 +31,14 @@ module.exports = ({ config: config = 'config/swagger.json' } = {}) => {
     }
     try {
       if (!html) {
-        html = fs.readFileSync(path.join(swaggerUIDirname, 'dist/index.html'), 'utf8');
-        html = html.replace(/url = "(.*)"/, `url = window.location.origin + window.location.pathname + 'swagger.json'`);
+        html = fs.readFileSync(
+          path.join(swaggerUIDirname, 'dist/index.html'),
+          'utf8'
+        );
+        html = html.replace(
+          /url = "(.*)"/,
+          `url = window.location.origin + window.location.pathname + 'swagger.json'`
+        );
       }
       res.send(html);
     } catch (e) {

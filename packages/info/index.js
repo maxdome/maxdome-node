@@ -13,9 +13,10 @@ module.exports = () => {
   });
   let env = process.env;
   try {
-    const keys = fs.readFileSync(path.join(process.cwd(), '.env.example'), 'utf-8')
+    const keys = fs
+      .readFileSync(path.join(process.cwd(), '.env.example'), 'utf-8')
       .split('\n')
-      .map((line) => {
+      .map(line => {
         const matches = line.match(/([A-Z_]*)=/);
         if (matches) {
           return matches[1];
