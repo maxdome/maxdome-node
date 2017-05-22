@@ -1,0 +1,19 @@
+{
+  "engines": {
+    "node": "^7.6.0"
+  },
+  "name": "@maxdome/prettier",
+  "version": "1.0.0",
+  "description": "",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "prettier": "^1.3.1"
+  },
+  "devDependencies": {},
+  "bin": {
+    "maxdome-prettier": "./index.sh"
+  },
+  "preferGlobal": true
+}
