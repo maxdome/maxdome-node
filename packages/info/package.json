@@ -3,13 +3,13 @@
     "node": "^7.6.0"
   },
   "name": "@maxdome/info",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@maxdome/version": "^1.0.0",
+    "@maxdome/version": "^1.0.1",
     "express": "^4.15.2",
     "lodash.pick": "^4.4.0"
   },

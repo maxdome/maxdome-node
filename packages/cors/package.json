@@ -3,7 +3,7 @@
     "node": "^7.6.0"
   },
   "name": "@maxdome/cors",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "publishConfig": {
     "access": "public"

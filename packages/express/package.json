@@ -3,7 +3,7 @@
     "node": "^7.6.0"
   },
   "name": "@maxdome/express",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "",
   "publishConfig": {
     "access": "public"
