@@ -1,7 +1,7 @@
 const AssetsOptions = require('./AssetsOptions');
 const MaxdomeErrorLogger = require('./MaxdomeErrorLogger');
 const MaxdomeOptions = require('./MaxdomeOptions');
-const RequestBuilder = require('@dnode/request').RequestBuilder;
+const RequestBuilder = require('@maxdome/request').RequestBuilder;
 const TipOfTheDaysOptions = require('./TipOfTheDaysOptions');
 
 module.exports = (
