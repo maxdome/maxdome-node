@@ -1,0 +1,15 @@
+{
+  "engines": {
+    "node": "^7.6.0"
+  },
+  "name": "@maxdome/request-maxdome",
+  "version": "2.0.2",
+  "description": "",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@maxdome/request": "^1.2.0"
+  },
+  "devDependencies": {}
+}
