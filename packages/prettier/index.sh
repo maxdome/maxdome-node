@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-COMMAND="prettier --single-quote --trailing-comma es5 --write"
+COMMAND="prettier --single-quote --trailing-comma es5 --print-width 120 --write"
 
 if [ "$1" ]
   then
