@@ -3,13 +3,12 @@
     "node": "^7.6.0"
   },
   "name": "@maxdome/logging",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
     "winston": "^2.1.0"
-  },
-  "devDependencies": {}
+  }
 }
