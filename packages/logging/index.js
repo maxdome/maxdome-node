@@ -3,7 +3,7 @@ const winston = require('winston');
 module.exports = ({
   filename,
   level,
-  transports: transports = [{ level: 'debug', type: 'Console' }],
+  transports: transports = [{ type: 'Console', options: { level: 'debug' } }],
 }) => {
   if (filename) {
     transports.push({
