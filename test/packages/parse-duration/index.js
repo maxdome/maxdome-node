@@ -32,4 +32,16 @@ describe('/packages/parse-duration', () => {
     const expected = parseDuration('1h 20m in seconds');
     assert.deepEqual(actual, expected);
   });
+
+  it('4800000 milliseconds in milliseconds', () => {
+    const actual = 4800000;
+    const expected = parseDuration(4800000);
+    assert.deepEqual(actual, expected);
+  });
+
+  it('4800000 milliseconds in seconds', () => {
+    const actual = 4800;
+    const expected = parseDuration(4800000, 'seconds');
+    assert.deepEqual(actual, expected);
+  });
 });
