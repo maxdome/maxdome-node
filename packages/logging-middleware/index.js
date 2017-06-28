@@ -7,4 +7,5 @@ module.exports = ({ format: format = 'combined', logger }) =>
         logger.info(message.replace('\n', ''));
       },
     },
+    skip: (req, res) => req.originalUrl === '/ping',
   });
