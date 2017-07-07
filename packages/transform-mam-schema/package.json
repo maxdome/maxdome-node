@@ -3,7 +3,7 @@
     "node": "^7.6.0"
   },
   "name": "@maxdome/transform-mam-schema",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "publishConfig": {
     "access": "public"
