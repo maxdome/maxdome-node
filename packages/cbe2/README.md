@@ -19,7 +19,7 @@ const objectType = '';
 const mamAsset = cbe2.asset(objectId, objectType);
 ```
 
-## Get the asset data of all changed assets for a diff
+## Get the asset data of all updated assets for a diff
 
 ```javascript
 const cbe2 = require('@maxdome/cbe2')({ cbe2Url: process.env.CBE2_URL });
@@ -28,7 +28,7 @@ const timestamp = 0;
 const diffs = cbe2.diff(timestamp);
 
 for (const diff of diffs) {
-  for (const objectId of diff.changed) {
+  for (const objectId of diff.updated) {
     const mamAsset = await cb2.asset(objectId, diff.objectType);
   }
 }
