@@ -1,16 +1,22 @@
 const winston = require('winston');
 
 module.exports = ({
-  filename,
   level,
-  transports: transports = [{ type: 'Console', options: { level: 'debug' } }],
+  transports: transports = [
+    {
+      type: 'Console',
+      options: {
+        timestamp: true,
+        colorize: process.env.NODE_ENV !== 'production',
+        prettyPrint: process.env.NODE_ENV !== 'production',
+        json: process.env.NODE_ENV === 'production',
+        stringify: obj => JSON.stringify(obj),
+        silent: process.env.NODE_ENV === 'test',
+        level: 'debug',
+      },
+    },
+  ],
 }) => {
-  if (filename) {
-    transports.push({
-      type: 'File',
-      options: { filename, level: 'debug' },
-    });
-  }
   if (level) {
     for (const transport of transports) {
       transport.options = transport.options || {};
