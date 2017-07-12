@@ -9,6 +9,7 @@
     "access": "public"
   },
   "dependencies": {
-    "express-winston": "^2.4.0"
+    "express-winston": "^2.4.0",
+    "winston": "^2.3.1"
   }
 }

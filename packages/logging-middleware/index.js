@@ -2,6 +2,7 @@ const expressWinston = require('express-winston');
 
 module.exports = ({ logging, options }) => () => {
   const logger = logging('request');
+module.exports = ({ logging, options }) => {
 
   return expressWinston.logger(
     Object.assign(
