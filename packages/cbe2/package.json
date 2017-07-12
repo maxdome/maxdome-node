@@ -2,14 +2,15 @@
   "engines": {
     "node": "^7.6.0"
   },
-  "name": "@maxdome/parse-duration",
-  "version": "1.4.0",
+  "name": "@maxdome/cbe2",
+  "version": "1.0.1",
   "description": "",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "parse-duration": "^0.1.1"
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1"
   },
   "devDependencies": {}
 }

@@ -2,14 +2,12 @@
   "engines": {
     "node": "^7.6.0"
   },
-  "name": "@maxdome/parse-duration",
-  "version": "1.4.0",
+  "name": "@maxdome/transform-mam-schema",
+  "version": "0.1.1",
   "description": "",
   "publishConfig": {
     "access": "public"
   },
-  "dependencies": {
-    "parse-duration": "^0.1.1"
-  },
+  "dependencies": {},
   "devDependencies": {}
 }
