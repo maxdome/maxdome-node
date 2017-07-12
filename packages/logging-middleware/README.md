@@ -2,6 +2,9 @@
 
 ```
 app.use(require('@maxdome/logging-middleware')({
-  logger: logging('req'),
+  logging,
+  options,
 }));
 ```
+
+See [express-winston](https://github.com/bithavoc/express-winston) for options.

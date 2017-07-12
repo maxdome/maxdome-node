@@ -1,11 +1,20 @@
-const morgan = require('morgan');
+const expressWinston = require('express-winston');
 
-module.exports = ({ format: format = 'combined', logger }) =>
-  morgan(format, {
-    stream: {
-      write: message => {
-        logger.info(message.replace('\n', ''));
+module.exports = ({ logging, options }) => () => {
+  const logger = logging('request');
+
+  return expressWinston.logger(
+    Object.assign(
+      {
+        winstonInstance: logger,
+        meta: true,
+        dynamicMeta: (req, res) => ({
+          path: req.route ? req.route.path : req.path,
+        }),
+        skip: (req, res) =>
+          req.baseUrl === '/docs' || req.originalUrl === '/ping',
       },
-    },
-    skip: (req, res) => req.originalUrl === '/ping',
-  });
+      options
+    )
+  );
+};

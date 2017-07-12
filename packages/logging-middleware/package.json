@@ -9,6 +9,6 @@
     "access": "public"
   },
   "dependencies": {
-    "morgan": "^1.8.1"
+    "express-winston": "^2.4.0"
   }
 }
