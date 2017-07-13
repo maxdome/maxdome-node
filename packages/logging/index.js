@@ -12,7 +12,7 @@ module.exports = ({
         json: process.env.NODE_ENV === 'production',
         stringify: obj => JSON.stringify(obj),
         silent: process.env.NODE_ENV === 'test',
-        level: 'debug',
+        level: 'info',
       },
     },
   ],
