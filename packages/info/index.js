@@ -17,7 +17,7 @@ module.exports = () => {
       .readFileSync(path.join(process.cwd(), '.env.example'), 'utf-8')
       .split('\n')
       .map(line => {
-        const matches = line.match(/([A-Z_]*)=/);
+        const matches = line.match(/([A-Z_]*)=.*? #info/);
         if (matches) {
           return matches[1];
         }
