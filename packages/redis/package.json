@@ -1,0 +1,15 @@
+{
+  "engines": {
+    "node": "^7.6.0"
+  },
+  "name": "@maxdome/redis",
+  "version": "1.0.4",
+  "description": "",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "redis": "^2.7.1"
+  },
+  "devDependencies": {}
+}
