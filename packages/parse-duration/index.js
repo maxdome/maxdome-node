@@ -25,9 +25,7 @@ module.exports = (ms, format) => {
       'T' +
       (h ? h + 'H' : '') +
       (m ? m + 'M' : '') +
-      (s || ms
-        ? (s ? s : '0') + '.' + (ms ? ('000' + ms).slice(-3) : '0') + 'S'
-        : '')
+      (s || ms ? (s ? s : '0') + '.' + (ms ? ('000' + ms).slice(-3) : '0') + 'S' : '')
     );
   }
   if (format && !parse[format] && format.substr(-1) === 's') {

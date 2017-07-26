@@ -1,9 +1,30 @@
+function slugify(title) {
+  return title
+    .replace(/ä/g, 'ae')
+    .replace(/ö/g, 'oe')
+    .replace(/ü/g, 'ue')
+    .replace(/ß/g, 'ss')
+    .replace(/[.,"'?!;:]/g, '')
+    .replace(/\W/g, '-')
+    .replace(/_/g, '-')
+    .toLowerCase();
+}
+
 class Asset {
   constructor(
     data,
-    { hostname: hostname = 'maxdome.de', protocol: protocol = 'http' } = {}
+    {
+      hostnames: hostnames = { package: 'www.maxdome.de', store: 'store.maxdome.de' },
+      protocol: protocol = 'https',
+    } = {}
   ) {
+    this._rawData = data;
+
+    this.hostnames = hostnames;
+    this.protocol = protocol;
+
     this.id = data.id;
+    this.referenceId = data.referenceId;
 
     const types = {
       assetvideofilm: 'movie',
@@ -17,9 +38,8 @@ class Asset {
     if (this.type === 'season') {
       this.title += ` (Staffel ${data.number})`;
     }
-    this.searchTitle = data.title
-      .replace(' (Hot From the UK)', '')
-      .replace(' (Hot from the US)', '');
+    this.originalTitle = data.title;
+    this.searchTitle = data.title.replace(' (Hot From the UK)', '').replace(' (Hot from the US)', '');
     this.hotFromTheUK = data.title.includes(' (Hot From the UK)');
     this.hotFromTheUS = data.title.includes(' (Hot from the US)');
     this.episodeTitle = data.episodeTitle;
@@ -29,9 +49,7 @@ class Asset {
     this.description = data.descriptionShort;
 
     if (data.coverList) {
-      const poster = data.coverList.filter(
-        cover => cover.usageType === 'poster'
-      )[0];
+      const poster = data.coverList.filter(cover => cover.usageType === 'poster')[0];
       if (poster) {
         this.image = poster.url;
       }
@@ -41,22 +59,72 @@ class Asset {
     if (data.fullMarkingList.includes('inPremiumIncluded')) {
       this.areas.push('package');
     }
-    if (
-      data.mediaUsageList.includes('DTO') ||
-      data.mediaUsageList.includes('TVOD')
-    ) {
+    if (data.mediaUsageList.includes('DTO') || data.mediaUsageList.includes('TVOD')) {
       this.areas.push('store');
     }
 
-    this.countries = data.countryList;
+    this.countries = data.countryList || [];
     this.duration = data.duration;
     this.fskLevels = data.fskLevelList;
     this.genres = data.genreList
-      .filter(genre => genre.genreType === 'genre')
+      .filter(genre => genre.genreType === 'genre' || genre.genreType === '_spielfilm')
       .map(genre => genre.value);
-    this.link = `${protocol}://${hostname}/${data.id}`;
+    this.languages = data.languageList;
+    this.url = `${protocol}://${hostnames.package}/${data.id}`;
     this.productionYear = data.productionYear;
-    this.rating = data.userrating;
+
+    if (data.userrating) {
+      this.rating = {
+        averageRating: data.userrating.averageRating,
+        countTotal: data.userrating.countTotal,
+      };
+    }
+
+    if (data.creditList) {
+      this.actors = data.creditList
+        .filter(credit => credit.creditType === 'actor')
+        .map(credit => ({ name: credit.value }));
+      this.directors = data.creditList
+        .filter(credit => credit.creditType === 'director')
+        .map(credit => ({ name: credit.value }));
+    }
+  }
+
+  getImage(width = 204, height = 295) {
+    if (this.image) {
+      return {
+        height,
+        url: this.image.replace('__WIDTH__', width).replace('__HEIGHT__', height),
+        width,
+      };
+    }
+  }
+
+  getCanonicalURL() {
+    let hostname = this.hostnames.store;
+    if (this.areas.includes('package')) {
+      hostname = this.hostnames.package;
+    }
+    let path = '';
+    switch (this.type) {
+      case 'episode':
+        path = `/${slugify(this.originalTitle)}/s${this.seasonNumber}/e${this.episodeNumber}-${slugify(this.episodeTitle)}-${this.id}.html`;
+        break;
+      case 'movie':
+        path = `/${slugify(this.originalTitle)}-${this.id}.html`;
+        break;
+      case 'season':
+        if (this.seasonNumber === '1') {
+          path = `/${slugify(this.originalTitle)}-b${this.referenceId}.html`;
+        } else {
+          path = `/${slugify(this.originalTitle)}-s${this.seasonNumber}-b${this.id}.html`;
+        }
+        break;
+      case 'series':
+        path = `/${slugify(this.originalTitle)}-b${this.id}.html`;
+        break;
+    }
+    return `${this.protocol}://${hostname}${path}`;
   }
 }
 

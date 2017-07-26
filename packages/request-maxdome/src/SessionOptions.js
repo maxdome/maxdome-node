@@ -12,10 +12,7 @@ class SessionOptions {
         'mxd-session': this.sessionId,
       },
       url: {
-        path: options.url.path.replace(
-          '%customerId%',
-          this.customer.customerId
-        ),
+        path: options.url.path.replace('%customerId%', this.customer.customerId),
       },
     };
   }

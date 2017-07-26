@@ -1,12 +1,14 @@
 const Asset = require('./Asset');
 
-class AssetsOptions {
+class AssetOptions {
   constructor(
+    assetId,
     {
       hostnames: hostnames = { package: 'www.maxdome.de', store: 'store.maxdome.de' },
       protocol: protocol = 'https',
     } = {}
   ) {
+    this.assetId = assetId;
     this.hostnames = hostnames;
     this.protocol = protocol;
   }
@@ -15,18 +17,15 @@ class AssetsOptions {
     return {
       method: 'get',
       transform: data =>
-        data.assetList.map(
-          asset =>
-            new Asset(asset, {
-              hostnames: this.hostnames,
-              protocol: this.protocol,
-            })
-        ),
+        new Asset(data, {
+          hostnames: this.hostnames,
+          protocol: this.protocol,
+        }),
       url: {
-        path: 'v1/mxd/assets',
+        path: `v1/assets/${this.assetId}`,
       },
     };
   }
 }
 
-module.exports = AssetsOptions;
+module.exports = AssetOptions;
