@@ -3,7 +3,7 @@
     "node": "^7.6.0"
   },
   "name": "@maxdome/parse-duration",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "",
   "publishConfig": {
     "access": "public"
