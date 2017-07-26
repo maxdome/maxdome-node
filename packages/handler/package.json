@@ -3,7 +3,7 @@
     "node": "^7.6.0"
   },
   "name": "@maxdome/handler",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "publishConfig": {
     "access": "public"
