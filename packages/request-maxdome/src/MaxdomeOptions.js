@@ -10,7 +10,7 @@ class MaxdomeOptions {
     this.apikey = apikey;
     this.appid = appid;
     if (url) {
-      [this.hostname, this.protocol] = url.split('://');
+      [this.protocol, this.hostname] = url.split('://');
     } else {
       this.hostname = hostname;
       this.protocol = protocol;
