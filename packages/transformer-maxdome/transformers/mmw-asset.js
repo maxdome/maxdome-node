@@ -4,5 +4,5 @@ module.exports = {
   detect: data => data['@class'],
   from: 'mmw',
   to: 'asset',
-  run: data => new Asset(data)
+  run: data => new Asset(data),
 };
