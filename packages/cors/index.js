@@ -12,13 +12,7 @@ module.exports = (opts = {}) => {
           origin: true,
           credentials: true,
           methods: ['GET', 'PUT', 'POST', 'DELETE'],
-          allowedHeaders: [
-            'accept',
-            'content-type',
-            'platform',
-            'clienttype',
-            'x-device',
-          ],
+          allowedHeaders: ['accept', 'content-type', 'platform', 'clienttype', 'x-device'],
           maxAge: 3600,
           optionsSuccessStatus: 200,
           preflightContinue: true,
@@ -34,14 +28,7 @@ module.exports = (opts = {}) => {
       if (err) {
         return next(err);
       }
-      const devices = [
-        'Media/BP440',
-        'Media/BP530',
-        'Media/BP540',
-        'Media/BH6430',
-        'Media/BP550',
-        'Media/BP730',
-      ];
+      const devices = ['Media/BP440', 'Media/BP530', 'Media/BP540', 'Media/BH6430', 'Media/BP550', 'Media/BP730'];
       if (
         req.headers['platform'] === 'ott' &&
         req.headers['clienttype'] === 'lg_bd' &&
@@ -55,8 +42,7 @@ module.exports = (opts = {}) => {
       ) {
         res.removeHeader('access-control-allow-credentials');
       }
-      const method =
-        req.method && req.method.toUpperCase && req.method.toUpperCase();
+      const method = req.method && req.method.toUpperCase && req.method.toUpperCase();
       if (method === 'OPTIONS') {
         return res.status(200).end();
       }

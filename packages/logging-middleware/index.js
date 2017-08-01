@@ -11,8 +11,7 @@ module.exports = ({ logging, options }) => {
         dynamicMeta: (req, res) => ({
           path: req.route ? req.route.path : req.path,
         }),
-        skip: (req, res) =>
-          req.baseUrl === '/docs' || req.originalUrl === '/ping',
+        skip: (req, res) => req.baseUrl === '/docs' || req.originalUrl === '/ping',
       },
       options
     )
@@ -22,11 +21,7 @@ module.exports = ({ logging, options }) => {
 module.exports.errorLogging = ({ logging, options, errorHandler }) => {
   const errorLogger = logging('error');
 
-  const errorMiddlewares = [
-    expressWinston.errorLogger(
-      Object.assign({ winstonInstance: errorLogger }, options)
-    ),
-  ];
+  const errorMiddlewares = [expressWinston.errorLogger(Object.assign({ winstonInstance: errorLogger }, options))];
 
   if (process.env.NODE_ENV === 'production') {
     errorMiddlewares.push(

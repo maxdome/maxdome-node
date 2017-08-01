@@ -26,10 +26,7 @@ module.exports = ({
   return (category, options) => {
     const logger = new winston.Logger(options);
     for (const transport of transports) {
-      logger.add(
-        winston.transports[transport.type],
-        Object.assign({}, transport.options, { label: category })
-      );
+      logger.add(winston.transports[transport.type], Object.assign({}, transport.options, { label: category }));
     }
     return logger;
   };
