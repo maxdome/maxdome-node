@@ -26,7 +26,7 @@ class Transformer {
   run(from, to, data) {
     if (typeof from !== 'string') {
       data = from;
-      from = detect(data);
+      from = this.detect(data);
     }
     const path = this.route.path(from, to);
     if (!path) {
