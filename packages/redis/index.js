@@ -9,9 +9,9 @@ module.exports = ({ redisUrl, redisClusterUrl }) => {
       servers: [
         {
           host,
-          port
-        }
-      ]
+          port,
+        },
+      ],
     });
   } else {
     redisClient = redis.createClient(redisUrl);
