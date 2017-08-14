@@ -57,7 +57,7 @@ class Request {
     return options;
   }
 
-  async send(path, options) {
+  send(path, options) {
     if (typeof path === 'object') {
       options = path;
       path = undefined;
@@ -72,14 +72,13 @@ class Request {
     if (typeof options.body === 'object') {
       options.json = true;
     }
-    try {
-      return await rp(options);
-    } catch (e) {
+    return rp(options).catch(e => {
       for (const errorLogger of this.errorLoggers) {
         errorLogger.onError(e);
       }
+
       throw e;
-    }
+    });
   }
 
   delete(path, options) {
