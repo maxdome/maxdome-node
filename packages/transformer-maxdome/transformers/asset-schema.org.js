@@ -75,7 +75,7 @@ module.exports = {
     }
 
     if (asset.type === 'episode') {
-      data.name = asset.episodeTitle;
+      data.name = asset.episodeTitle || `Staffel ${asset.seasonNumber} Episode ${asset.episodeNumber}`;
       data.episodeNumber = asset.episodeNumber;
       data.partOfSeason = { seasonNumber: asset.seasonNumber };
       data.partOfSeries = { name: asset.title };
