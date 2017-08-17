@@ -77,8 +77,14 @@ module.exports = {
     if (asset.type === 'episode') {
       data.name = asset.episodeTitle || `Staffel ${asset.seasonNumber} Episode ${asset.episodeNumber}`;
       data.episodeNumber = asset.episodeNumber;
-      data.partOfSeason = { seasonNumber: asset.seasonNumber };
-      data.partOfSeries = { name: asset.title };
+      data.partOfSeason = {
+        '@type': 'TVSeason',
+        seasonNumber: asset.seasonNumber,
+      };
+      data.partOfSeries = {
+        '@type': 'TVSeries',
+        name: asset.title,
+      };
     }
 
     if (asset.type === 'movie') {
@@ -89,6 +95,7 @@ module.exports = {
       delete data.name;
       data.seasonNumber = asset.seasonNumber;
       data.partOfSeries = {
+        '@type': 'TVSeries',
         name: asset.title.replace(/ \(.*\)/, ''),
       };
     }
