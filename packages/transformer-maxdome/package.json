@@ -3,7 +3,7 @@
     "node": "^7.6.0"
   },
   "name": "@maxdome/transformer-maxdome",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "publishConfig": {
     "access": "public"
@@ -11,6 +11,5 @@
   "dependencies": {
     "@maxdome/request-maxdome": "^4.1.1",
     "@maxdome/transformer": "^1.1.0"
-  },
-  "devDependencies": {}
+  }
 }
