@@ -36,8 +36,8 @@ module.exports = {
             {
               '@type': 'Offer',
               category: 'subscription',
-              availabilityStarts: '1970-01-01T00:00',
-              availabilityEnds: '2020-01-01T00:00',
+              availabilityStarts: '1970-01-01T00:00+02:00',
+              availabilityEnds: '2020-01-01T00:00+02:00',
               eligibleRegion: [
                 {
                   '@type': 'Country',
@@ -118,8 +118,8 @@ module.exports = {
           {
             '@type': 'Offer',
             category: 'subscription',
-            availabilityStarts: '1970-01-01T00:00',
-            availabilityEnds: '2020-01-01T00:00',
+            availabilityStarts: '1970-01-01T00:00+02:00',
+            availabilityEnds: '2020-01-01T00:00+02:00',
             eligibleRegion: [
               {
                 '@type': 'Country',
