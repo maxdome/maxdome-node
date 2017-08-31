@@ -142,6 +142,14 @@ module.exports = {
       });
     }
 
+    if (data.actor.length === 0) {
+      delete data.actor;
+    }
+
+    if (data.director.length === 0) {
+      delete data.director;
+    }
+
     return data;
   },
 };
