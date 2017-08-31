@@ -4,9 +4,8 @@ function slugify(title) {
     .replace(/ö/g, 'oe')
     .replace(/ü/g, 'ue')
     .replace(/ß/g, 'ss')
-    .replace(/[.,"'?!;:]/g, '')
-    .replace(/\W/g, '-')
-    .replace(/_/g, '-')
+    .replace(/[!"\#$%&'()*+,\-./:;<=>?@\[\\\]^_`{|}~]+/g, '')
+    .replace(/[^a-zA-Z0-9]+/g, '-')
     .toLowerCase();
 }
 
