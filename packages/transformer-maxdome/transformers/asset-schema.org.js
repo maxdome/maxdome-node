@@ -79,12 +79,12 @@ module.exports = {
       data.episodeNumber = asset.episodeNumber;
       data.partOfSeason = {
         '@type': 'TVSeason',
-        '@id': asset._rawData.parentIdList[0],
+        '@id': asset.seasonId,
         seasonNumber: asset.seasonNumber,
       };
       data.partOfSeries = {
         '@type': 'TVSeries',
-        '@id': asset._rawData.grandParentIdList[0],
+        '@id': asset.seriesId,
         name: asset.title,
       };
     }
@@ -98,7 +98,7 @@ module.exports = {
       data.seasonNumber = asset.seasonNumber;
       data.partOfSeries = {
         '@type': 'TVSeries',
-        '@id': asset._rawData.parentIdList[0],
+        '@id': asset.seriesId,
         name: asset.title.replace(/ \(.*\)/, ''),
       };
     }
