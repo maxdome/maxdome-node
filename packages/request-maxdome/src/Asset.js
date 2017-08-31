@@ -87,6 +87,15 @@ class Asset {
         .filter(credit => credit.creditType === 'director')
         .map(credit => ({ name: credit.value }));
     }
+
+    if (this.type === 'episode') {
+      this.seasonId = data.parentIdList[0];
+      this.seriesId = data.grandParentIdList[0];
+    }
+
+    if (this.type === 'series') {
+      this.seriesId = data.parentIdList[0];
+    }
   }
 
   getImage(width = 204, height = 295) {
