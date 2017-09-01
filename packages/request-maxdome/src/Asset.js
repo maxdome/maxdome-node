@@ -89,12 +89,18 @@ class Asset {
     }
 
     if (this.type === 'episode') {
-      this.seasonId = data.parentIdList[0];
-      this.seriesId = data.grandParentIdList[0];
+      if (data.parentIdList) {
+        this.seasonId = data.parentIdList[0];
+      }
+      if (data.grandParentIdList) {
+        this.seriesId = data.grandParentIdList[0];
+      }
     }
 
     if (this.type === 'series') {
-      this.seriesId = data.parentIdList[0];
+      if (data.parentIdList) {
+        this.seriesId = data.parentIdList[0];
+      }
     }
   }
 
