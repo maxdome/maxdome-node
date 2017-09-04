@@ -117,28 +117,6 @@ module.exports = {
             'http://schema.org/AndroidPlatform',
           ],
         },
-        expectsAcceptanceOf: [
-          {
-            '@type': 'Offer',
-            category: 'subscription',
-            availabilityStarts: '1970-01-01T00:00+02:00',
-            availabilityEnds: '2020-01-01T00:00+02:00',
-            eligibleRegion: [
-              {
-                '@type': 'Country',
-                name: 'DE',
-              },
-              {
-                '@type': 'Country',
-                name: 'AT',
-              },
-            ],
-            seller: {
-              '@type': 'Organization',
-              name: 'maxdome',
-            },
-          },
-        ],
       });
     }
 
