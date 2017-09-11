@@ -76,11 +76,11 @@ module.exports = {
 
     if (asset.type === 'episode') {
       data.name = asset.episodeTitle || `Staffel ${asset.seasonNumber} Episode ${asset.episodeNumber}`;
-      data.episodeNumber = asset.episodeNumber;
+      data.episodeNumber = +asset.episodeNumber;
       data.partOfSeason = {
         '@type': 'TVSeason',
         '@id': `${asset.protocol}://${asset.hostnames.package}/${asset.seasonId}`,
-        seasonNumber: asset.seasonNumber,
+        seasonNumber: +asset.seasonNumber,
       };
       data.partOfSeries = {
         '@type': 'TVSeries',
@@ -95,7 +95,7 @@ module.exports = {
 
     if (asset.type === 'season') {
       delete data.name;
-      data.seasonNumber = asset.seasonNumber;
+      data.seasonNumber = +asset.seasonNumber;
       data.partOfSeries = {
         '@type': 'TVSeries',
         '@id': `${asset.protocol}://${asset.hostnames.package}/${asset.seriesId}`,
