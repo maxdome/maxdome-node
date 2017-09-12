@@ -1,6 +1,6 @@
 const assert = require('assert');
 
-const Transformer = require('../../../packages/transformer');
+const Transformer = require('../');
 
 const transformer = new Transformer()
   .add({

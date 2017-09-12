@@ -1,6 +1,6 @@
 const assert = require('assert');
 
-const parseDuration = require('../../../packages/parse-duration');
+const parseDuration = require('../');
 
 describe('/packages/parse-duration', () => {
   it('1 hour 20 minutes in milliseconds', () => {
