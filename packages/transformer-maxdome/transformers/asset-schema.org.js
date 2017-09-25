@@ -56,10 +56,6 @@ module.exports = {
           ],
         },
       ],
-      image: {
-        '@type': 'ImageObject',
-        url: asset.getImage(),
-      },
       actor: (asset.actors || []).map(actor => ({ '@type': 'Person', name: actor.name })),
       director: (asset.directors || []).map(director => ({ '@type': 'Person', name: director.name })),
     };
