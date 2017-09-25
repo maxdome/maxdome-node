@@ -20,18 +20,27 @@ module.exports = {
       potentialAction: [
         {
           '@type': 'WatchAction',
-          target: {
-            '@type': 'EntryPoint',
-            urlTemplate: `${asset.url}?autoplay=true`,
-            inLanguage: 'de',
-            actionPlatform: [
-              'http://schema.googleapis.com/GoogleVideoCast',
-              'http://schema.org/DesktopWebPlatform',
-              'http://schema.org/MobileWebPlatform',
-              'http://schema.org/IOSPlatform',
-              'http://schema.org/AndroidPlatform',
-            ],
-          },
+          target: [
+            {
+              '@type': 'EntryPoint',
+              urlTemplate: `${asset.url}?autoplay=true`,
+              inLanguage: 'de',
+              actionPlatform: [
+                'http://schema.googleapis.com/GoogleVideoCast',
+                'http://schema.org/DesktopWebPlatform',
+                'http://schema.org/MobileWebPlatform',
+              ],
+            },
+            {
+              '@type': 'EntryPoint',
+              urlTemplate: `maxdome://${asset.type}/${asset.id}/play`,
+              inLanguage: 'de',
+              actionPlatform: [
+                'http://schema.org/IOSPlatform',
+                'http://schema.org/AndroidPlatform',
+              ],
+            },
+          ],
           expectsAcceptanceOf: [
             {
               '@type': 'Offer',
@@ -102,17 +111,26 @@ module.exports = {
     if (['season', 'series'].includes(asset.type)) {
       data.potentialAction.push({
         '@type': 'ViewAction',
-        target: {
-          '@type': 'EntryPoint',
-          urlTemplate: asset.url,
-          inLanguage: 'de',
-          actionPlatform: [
-            'http://schema.org/DesktopWebPlatform',
-            'http://schema.org/MobileWebPlatform',
-            'http://schema.org/IOSPlatform',
-            'http://schema.org/AndroidPlatform',
-          ],
-        },
+        target: [
+          {
+            '@type': 'EntryPoint',
+            urlTemplate: asset.url,
+            inLanguage: 'de',
+            actionPlatform: [
+              'http://schema.org/DesktopWebPlatform',
+              'http://schema.org/MobileWebPlatform',
+            ],
+          },
+          {
+            '@type': 'EntryPoint',
+            urlTemplate: `maxdome://${asset.type}/${asset.id}`,
+            inLanguage: 'de',
+            actionPlatform: [
+              'http://schema.org/IOSPlatform',
+              'http://schema.org/AndroidPlatform',
+            ],
+          }
+        ],
       });
     }
 
