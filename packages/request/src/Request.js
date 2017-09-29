@@ -10,7 +10,7 @@ class Request {
   constructor(options) {
     this.errorLoggers = [];
     this.options = {
-      timeout: 1000,
+      timeout: 3000,
     };
     if (options) {
       this.addOptions(options);
