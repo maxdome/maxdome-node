@@ -3,13 +3,13 @@
     "node": "^7.6.0"
   },
   "name": "@maxdome/request-maxdome",
-  "version": "4.2.2",
+  "version": "4.2.3",
   "description": "",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@maxdome/request": "^1.3.1"
+    "@maxdome/request": "^1.3.2"
   },
   "devDependencies": {}
 }
