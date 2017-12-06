@@ -3,11 +3,9 @@
     "node": "^7.6.0"
   },
   "name": "@maxdome/version",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "publishConfig": {
     "access": "public"
-  },
-  "dependencies": {},
-  "devDependencies": {}
+  }
 }

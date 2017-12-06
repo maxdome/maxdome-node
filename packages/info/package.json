@@ -3,15 +3,14 @@
     "node": "^7.6.0"
   },
   "name": "@maxdome/info",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@maxdome/version": "^1.0.3",
+    "@maxdome/version": "^1.0.4",
     "express": "^4.15.2",
     "lodash.pick": "^4.4.0"
-  },
-  "devDependencies": {}
+  }
 }
