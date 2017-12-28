@@ -1,0 +1,18 @@
+{
+  "engines": {
+    "node": "^7.6.0"
+  },
+  "name": "@maxdome/healthcheck",
+  "version": "1.0.0",
+  "description": "",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "express": "^4.15.2",
+    "got": "^8.0.1"
+  },
+  "devDependencies": {
+    "supertest": "^3.0.0"
+  }
+}
