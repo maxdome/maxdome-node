@@ -11,7 +11,8 @@ module.exports = ({ cbe2Url }) =>
     } else {
       const data = await rp.get({
         json: true,
-        url: cbe2Url +
+        url:
+          cbe2Url +
           `/content_backend/public/export/export.php?source=cbe` +
           `&objectType=${objectType}&timestamp=${timestamp}`,
       });
