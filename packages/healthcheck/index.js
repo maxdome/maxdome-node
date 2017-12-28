@@ -6,15 +6,11 @@ module.exports = function(options = {}) {
   const healthChecks = options.healthChecks || {};
 
   function checkServices() {
+    const results = {};
     return Promise.all(
       Object.keys(healthChecks).map(async name => {
-        let dep = healthChecks[name];
-
-        if (typeof dep === 'string') {
-          dep = healthChecks[name] = { method: 'GET', url: dep };
-        }
+        let dep = results[name] = typeof healthChecks[name] === 'string' ? { method: 'GET', url: healthChecks[name] } : Object.assign({}, healthChecks[name]);
         dep.options = Object.assign({ json: true }, dep.options);
-        dep.options.body = { foo: 'bar' };
 
         let res;
         try {
@@ -37,8 +33,8 @@ module.exports = function(options = {}) {
         dep.status = res.statusCode || res.status || 502;
       })
     )
-      .then(() => healthChecks)
-      .catch(() => healthChecks);
+      .then(() => results)
+      .catch(() => results);
   }
 
   function hasErrors(result) {
@@ -47,7 +43,7 @@ module.exports = function(options = {}) {
 
   router.get('/', async (req, res, next) => {
     try {
-      const result = await checkServices();
+      const result = await checkServices(healthChecks);
       const err = hasErrors(result);
       const filtered = {};
       Object.entries(result).forEach(([k, v]) => (filtered[k] = v.status));
@@ -59,7 +55,7 @@ module.exports = function(options = {}) {
 
   router.get('/details', async (req, res, next) => {
     try {
-      const result = await checkServices();
+      const result = await checkServices(healthChecks);
       const err = hasErrors(result);
       res.status(err ? 503 : 200).json(result);
     } catch (e) {

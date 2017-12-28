@@ -7,5 +7,5 @@ const healthChecks = {
   service3: { url: 'https://service3.com/ping', options: { headers: { 'Authorization': `Basic dXNlcjpwYXNz` } } },
 };
 
-app.use(require('@maxdome/healthcheck')({ healthChecks }));
+app.use('/health', require('@maxdome/healthcheck')({ healthChecks }));
 ```
