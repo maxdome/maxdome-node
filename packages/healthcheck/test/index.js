@@ -91,10 +91,7 @@ describe('/packages/healthcheck', () => {
         });
     });
     it('returns status 200 all services are ok', () => {
-      app.use(
-        '/health',
-        healthcheck({ healthChecks: { github: 'https://status.github.com/api/status.json' } })
-      );
+      app.use('/health', healthcheck({ healthChecks: { github: 'https://status.github.com/api/status.json' } }));
       return request(app)
         .get('/health/details')
         .expect(200)

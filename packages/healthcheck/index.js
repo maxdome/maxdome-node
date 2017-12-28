@@ -9,7 +9,10 @@ module.exports = function(options = {}) {
     const results = {};
     return Promise.all(
       Object.keys(healthChecks).map(async name => {
-        let dep = results[name] = typeof healthChecks[name] === 'string' ? { method: 'GET', url: healthChecks[name] } : Object.assign({}, healthChecks[name]);
+        let dep = (results[name] =
+          typeof healthChecks[name] === 'string'
+            ? { method: 'GET', url: healthChecks[name] }
+            : Object.assign({}, healthChecks[name]));
         dep.options = Object.assign({ json: true }, dep.options);
 
         let res;
