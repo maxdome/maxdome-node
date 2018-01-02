@@ -22,13 +22,6 @@ module.exports = function(options = {}) {
           res = err.response;
         }
 
-        const connOptions = Object.getOwnPropertySymbols(res.req.connection).find(
-          item => item.toString() === 'Symbol(connect-options)'
-        );
-        dep.request = {
-          body: dep.options.body,
-          headers: res.req.connection[connOptions].headers,
-        };
         dep.response = {
           body: res.body,
           headers: res.headers,
