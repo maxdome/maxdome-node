@@ -3,7 +3,7 @@
     "node": "^7.6.0"
   },
   "name": "@maxdome/cbe2",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "publishConfig": {
     "access": "public"
@@ -11,6 +11,5 @@
   "dependencies": {
     "request": "^2.81.0",
     "request-promise": "^4.2.1"
-  },
-  "devDependencies": {}
+  }
 }

@@ -3,7 +3,6 @@
     "node": "^7.6.0"
   },
   "name": "@maxdome/healthcheck",
-  "version": "1.0.0",
   "description": "",
   "publishConfig": {
     "access": "public"
@@ -14,5 +13,6 @@
   },
   "devDependencies": {
     "supertest": "^3.0.0"
-  }
+  },
+  "version": "1.0.0"
 }
