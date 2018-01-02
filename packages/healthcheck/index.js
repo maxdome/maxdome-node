@@ -41,7 +41,7 @@ module.exports = function(options = {}) {
   }
 
   function hasErrors(result) {
-    return !!Object.values(result).find(val => val.status >= 400);
+    return Object.values(result).some(val => val.status >= 400);
   }
 
   router.get('/', async (req, res, next) => {
