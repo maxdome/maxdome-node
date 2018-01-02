@@ -4,9 +4,13 @@ const app = JSON.parse(fs.readFileSync(`${process.cwd()}/package.json`));
 const lib = JSON.parse(fs.readFileSync(`${__dirname}/../package.json`));
 
 class MaxdomeOptions {
-  constructor(
-    { apikey, appid, hostname: hostname = 'heimdall.maxdome.de/api', protocol: protocol = 'https', url } = {}
-  ) {
+  constructor({
+    apikey,
+    appid,
+    hostname: hostname = 'heimdall.maxdome.de/api',
+    protocol: protocol = 'https',
+    url,
+  } = {}) {
     this.apikey = apikey;
     this.appid = appid;
     if (url) {

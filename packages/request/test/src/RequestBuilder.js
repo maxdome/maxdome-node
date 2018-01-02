@@ -2,7 +2,7 @@ const assert = require('assert');
 
 const RequestBuilder = require('../../').RequestBuilder;
 
-const defaultOptions = { timeout: 1000 };
+const defaultOptions = { timeout: 3000 };
 
 describe('/packages/request/src/RequestBuilder.js', () => {
   it('should be empty if nothing is set', () => {

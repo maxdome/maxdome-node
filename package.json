@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "fmt": "packages/prettier/index.sh",
     "test": "mocha --recursive './packages/*/test/**/*.js'"
   },
   "devDependencies": {
