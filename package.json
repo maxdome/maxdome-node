@@ -1,9 +1,11 @@
 {
   "scripts": {
     "fmt": "packages/prettier/index.sh",
+    "postinstall": "lerna bootstrap",
     "test": "mocha --recursive './packages/*/test/**/*.js'"
   },
   "devDependencies": {
+    "lerna": "^2.7.1",
     "mocha": "^3.4.2"
   }
 }
