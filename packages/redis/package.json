@@ -12,5 +12,10 @@
     "redis": "^2.7.1",
     "redis-clustr": "^1.5.2"
   },
-  "devDependencies": {}
+  "scripts": {
+    "nsp": "nsp check"
+  },
+  "devDependencies": {
+    "nsp": "^3.1.0"
+  }
 }

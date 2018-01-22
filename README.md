@@ -32,3 +32,9 @@ See also: https://github.com/lerna/lerna#getting-started
   lerna publish
   ```
 * Select for all changed packages `major`, `minor` or `patch` for version bumping
+
+## Check dependencies for vulnerabilities
+
+```
+lerna run nsp
+```
