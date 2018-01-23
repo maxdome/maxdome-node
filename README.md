@@ -36,5 +36,5 @@ See also: https://github.com/lerna/lerna#getting-started
 ## Check dependencies for vulnerabilities
 
 ```
-lerna run nsp
+npm run nsp
 ```
