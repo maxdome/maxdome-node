@@ -11,11 +11,5 @@
   "dependencies": {
     "@maxdome/request-maxdome": "^4.2.4",
     "@maxdome/transformer": "^1.1.1"
-  },
-  "scripts": {
-    "nsp": "nsp check"
-  },
-  "devDependencies": {
-    "nsp": "^3.1.0"
   }
 }

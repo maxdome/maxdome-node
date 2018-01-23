@@ -2,10 +2,12 @@
   "scripts": {
     "fmt": "packages/prettier/index.sh",
     "postinstall": "lerna bootstrap",
-    "test": "lerna run nsp && mocha --recursive './packages/*/test/**/*.js'"
+    "test": "lerna run nsp && mocha --recursive './packages/*/test/**/*.js'",
+    "nsp": "lerna exec --ignore '@dnode/parse-duration' --ignore '@dnode/swig' nsp check"
   },
   "devDependencies": {
     "lerna": "^2.7.1",
-    "mocha": "^3.4.2"
+    "mocha": "^3.4.2",
+    "nsp": "^3.1.0"
   }
 }

@@ -7,12 +7,5 @@
   "description": "",
   "publishConfig": {
     "access": "public"
-  },
-  "dependencies": {},
-  "scripts": {
-    "nsp": "nsp check"
-  },
-  "devDependencies": {
-    "nsp": "^3.1.0"
   }
 }
