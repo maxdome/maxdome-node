@@ -3,7 +3,7 @@
     "fmt": "packages/prettier/index.sh",
     "postinstall": "lerna bootstrap",
     "test": "lerna run nsp && mocha --recursive './packages/*/test/**/*.js'",
-    "nsp": "lerna exec --ignore '@dnode/parse-duration' --ignore '@dnode/swig' nsp check"
+    "nsp": "lerna exec nsp check"
   },
   "devDependencies": {
     "lerna": "^2.7.1",
