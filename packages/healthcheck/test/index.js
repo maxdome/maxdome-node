@@ -63,7 +63,6 @@ describe('/packages/healthcheck', () => {
           assert.equal(res.body.github.method, 'POST');
           assert.equal(res.body.github.url, 'https://status.github.com/api/status.json');
           assert.equal(res.body.github.status, 404);
-          assert.equal(typeof res.body.github.request.headers, 'object');
           assert.equal(typeof res.body.github.response.headers, 'object');
         });
     });
@@ -81,12 +80,10 @@ describe('/packages/healthcheck', () => {
           assert.equal(res.body.google.method, 'GET');
           assert.equal(res.body.google.url, 'https://google.com/ping');
           assert.equal(res.body.google.status, 400);
-          assert.equal(typeof res.body.google.request.headers, 'object');
           assert.equal(typeof res.body.google.response.headers, 'object');
           assert.equal(res.body.github.method, 'GET');
           assert.equal(res.body.github.url, 'https://status.github.com/api/status.json');
           assert.equal(res.body.github.status, 200);
-          assert.equal(typeof res.body.github.request.headers, 'object');
           assert.equal(typeof res.body.github.response.headers, 'object');
         });
     });
@@ -99,7 +96,6 @@ describe('/packages/healthcheck', () => {
           assert.equal(res.body.github.method, 'GET');
           assert.equal(res.body.github.url, 'https://status.github.com/api/status.json');
           assert.equal(res.body.github.status, 200);
-          assert.equal(typeof res.body.github.request.headers, 'object');
           assert.equal(typeof res.body.github.response.headers, 'object');
           assert.equal(typeof res.body.github.response.body, 'object');
         });
