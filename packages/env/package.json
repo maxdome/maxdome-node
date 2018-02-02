@@ -1,0 +1,17 @@
+{
+  "engines": {
+    "node": "^7.6.0"
+  },
+  "name": "@maxdome/env",
+  "version": "1.1.0",
+  "description": "",
+  "repository": "maxdome/maxdome-node",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "dotenv-safe": "^4.0.4"
+  }
+}
