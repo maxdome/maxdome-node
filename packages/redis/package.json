@@ -3,7 +3,7 @@
     "node": "^7.6.0"
   },
   "name": "@maxdome/redis",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "",
   "publishConfig": {
     "access": "public"
@@ -11,6 +11,5 @@
   "dependencies": {
     "redis": "^2.7.1",
     "redis-clustr": "^1.5.2"
-  },
-  "devDependencies": {}
+  }
 }

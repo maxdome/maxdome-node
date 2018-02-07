@@ -3,11 +3,9 @@
     "node": "^7.6.0"
   },
   "name": "@maxdome/handler",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "",
   "publishConfig": {
     "access": "public"
-  },
-  "dependencies": {},
-  "devDependencies": {}
+  }
 }

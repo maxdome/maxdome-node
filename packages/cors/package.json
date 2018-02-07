@@ -3,7 +3,7 @@
     "node": "^7.6.0"
   },
   "name": "@maxdome/cors",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "",
   "publishConfig": {
     "access": "public"
@@ -12,6 +12,5 @@
     "cors": "^2.8.3",
     "lodash.mergewith": "^4.6.0",
     "lodash.union": "^4.6.0"
-  },
-  "devDependencies": {}
+  }
 }

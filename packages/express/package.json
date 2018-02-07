@@ -3,13 +3,12 @@
     "node": "^7.6.0"
   },
   "name": "@maxdome/express",
-  "version": "2.1.4",
+  "version": "2.1.5",
   "description": "",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
     "express": "^4.15.2"
-  },
-  "devDependencies": {}
+  }
 }

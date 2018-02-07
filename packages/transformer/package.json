@@ -3,13 +3,12 @@
     "node": "^7.6.0"
   },
   "name": "@maxdome/transformer",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
     "node-dijkstra": "^2.5.0"
-  },
-  "devDependencies": {}
+  }
 }
