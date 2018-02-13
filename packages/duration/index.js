@@ -7,20 +7,9 @@ module.exports = ms => {
 
   const duration = {};
 
-  const pluralizations = [
-    'nanosecond',
-    'microsecond',
-    'millisecond',
-    'second',
-    'minute',
-    'hour',
-    'day',
-    'week',
-    'month',
-    'year',
-  ];
-  for (const pluralization of pluralizations) {
-    duration[pluralization + 's'] = () => ms / parse[pluralization];
+  const formats = ['millisecond', 'second', 'minute', 'hour', 'day', 'week', 'month', 'year'];
+  for (const format of formats) {
+    duration['as' + format[0].toUpperCase() + format.substring(1) + 's'] = () => ms / parse[format];
   }
 
   duration.toISOString = () => {

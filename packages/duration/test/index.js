@@ -1,28 +1,30 @@
 const assert = require('power-assert');
 
+const moment = require('moment');
+
 const duration = require('../');
 
 describe('packages/parse-duration', () => {
   it('1 hour 20 minutes in milliseconds', () => {
-    const actual = duration('1h 20m').milliseconds();
+    const actual = duration('1h 20m').asMilliseconds();
     const expected = 4800000;
     assert.deepEqual(actual, expected);
   });
 
   it('1 hour 20 minutes in seconds', () => {
-    const actual = duration('1h 20m').seconds();
+    const actual = duration('1h 20m').asSeconds();
     const expected = 4800;
     assert.deepEqual(actual, expected);
   });
 
   it('4800000 milliseconds in milliseconds', () => {
-    const actual = duration(4800000).milliseconds();
+    const actual = duration(4800000).asMilliseconds();
     const expected = 4800000;
     assert.deepEqual(actual, expected);
   });
 
   it('4800000 milliseconds in seconds', () => {
-    const actual = duration(4800000).seconds();
+    const actual = duration(4800000).asSeconds();
     const expected = 4800;
     assert.deepEqual(actual, expected);
   });
