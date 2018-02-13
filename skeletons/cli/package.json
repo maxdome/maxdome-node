@@ -11,7 +11,7 @@
   "dependencies": {},
   "devDependencies": {},
   "bin": {
-    "dnode-name": "./index.sh"
+    "maxdome-name": "./index.sh"
   },
   "preferGlobal": true
 }
