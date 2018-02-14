@@ -1,0 +1,17 @@
+{
+  "engines": {
+    "node": "^7.6.0"
+  },
+  "name": "@maxdome/throttle",
+  "version": "1.1.0",
+  "description": "",
+  "repository": "maxdome/maxdome-node",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@maxdome/duration": "^3.0.0",
+    "redis-throttle": "^0.0.1"
+  }
+}
