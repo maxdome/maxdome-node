@@ -2,7 +2,11 @@ const duration = require('@maxdome/duration');
 const Throttle = require('redis-throttle');
 
 module.exports = config => {
-  Throttle.configure(config);
+  if (config.redis) {
+    Throttle.rdb = config.redis;  
+  } else {
+    Throttle.configure(config);    
+  }
   return (key, limit, callback, fallback) => {
     let span = '1 second';
     if (typeof limit === 'string') {
