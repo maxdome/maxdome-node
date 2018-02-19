@@ -14,24 +14,26 @@
     "dev": "nodemon",
     "fmt": "maxdome-prettier",
     "start": "node src/web.js",
-    "test": "npm run test-unit && npm run test-integration",
+    "test": "npm run test:unit && npm run test:integration && npm run test:security",
     "test:integration": "mocha --recursive test/integration",
+    "test:security": "nsp check",
     "test:unit": "mocha --recursive test/unit"
   },
   "dependencies": {
-    "@maxdome/cors": "^1.0.0",
-    "@maxdome/express": "^2.0.0",
-    "@maxdome/http-auth": "^1.0.0",
-    "@maxdome/info": "^2.1.0",
-    "@maxdome/logging": "^1.0.0",
-    "@maxdome/logging-middleware": "^1.0.0",
-    "@maxdome/swagger": "^3.0.2",
-    "dotenv-safe": "^4.0.3",
-    "express": "^4.15.2"
+    "@maxdome/env": "^1.1.1",
+    "@maxdome/express": "^2.1.5",
+    "@maxdome/logging": "^2.1.1",
+    "@maxdome/logging-middleware": "^2.1.1",
+    "@maxdome/swagger": "^4.1.1",
+    "express": "^4.16.2"
   },
   "devDependencies": {
-    "@maxdome/prettier": "^1.0.0",
-    "mocha": "^3.0.2",
-    "nodemon": "^1.11.0"
+    "@maxdome/prettier": "^1.3.2",
+    "espower-loader": "^1.0.0",
+    "intelli-espower-loader": "^1.0.0",
+    "mocha": "^5.0.1",
+    "nodemon": "^1.15.0",
+    "nsp": "^3.1.0",
+    "power-assert": "^1.1.0"
   }
 }

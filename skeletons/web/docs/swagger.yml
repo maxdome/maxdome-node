@@ -1,0 +1,19 @@
+swagger: "2.0"
+info:
+  description: ""
+  version: "0.0.0"
+  title: "Web Skeleton"
+basePath: "/api"
+produces:
+  - "application/json"
+consumes:
+  - 'application/json'
+paths:
+  /:
+    get:
+      summary: ""
+      responses:
+        200:
+          description: "OK"
+        400:
+          description: "Bad Request"

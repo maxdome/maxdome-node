@@ -1,27 +1,22 @@
-require('dotenv-safe').config();
+require('@maxdome/env');
 
+const logging = require('@maxdome/logging')({
+  level: process.env.LOG_LEVEL,
+});
+require('@maxdome/exception-handling')({ logging });
+const appLogger = logging('app');
+appLogger.info('initializing server');
 const app = require('@maxdome/express')();
+app.use(require('@maxdome/logging-middleware')({ logging }));
 
-const logging = require('@maxdome/logging')({ level: process.env.LOG_LEVEL });
-const serverLogger = logging('server');
-serverLogger.info('initializing server');
-app.use(require('@maxdome/logging-middleware')({ logger: logging('req') }));
+app.use('/docs', require('@maxdome/swagger')({ config: 'docs/swagger.yml' }));
+app.use('/api', require('./api')());
 
-app.use('/api', require('@maxdome/cors')());
-app.use('/api', require('./routers/api')());
-
-app.use('/docs', require('@maxdome/swagger')());
-app.get('/', (req, res) => {
-  res.redirect('/docs/');
-});
-
-const httpAuth = require('@maxdome/http-auth')({
-  user: process.env.HTTP_AUTH_USER,
-  password: process.env.HTTP_AUTH_PASSWORD,
-});
-app.use('/info', httpAuth, require('@maxdome/info')());
-
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  serverLogger.info(`server listen on ${port}`);
-});
+app.use(require('@maxdome/logging-middleware').errorLogging({ logging }));
+if (!module.parent) {
+  const port = process.env.PORT || 3000;
+  app.listen(port, () => {
+    appLogger.info(`Server listening on ${port}`);
+  });
+}
+module.exports = app;
