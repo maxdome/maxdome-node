@@ -15,3 +15,7 @@ module.exports = () => {
   }
   return version;
 };
+
+module.exports.controller = () => (req, res) => {
+  res.status(200).send(module.exports());
+});
