@@ -1,0 +1,17 @@
+{
+  "engines": {
+    "node": "^7.6.0"
+  },
+  "name": "@maxdome/health",
+  "version": "0.0.0",
+  "description": "",
+  "repository": "maxdome/maxdome-node",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "express": "^4.16.2",
+    "supertest": "^3.0.0"
+  }
+}

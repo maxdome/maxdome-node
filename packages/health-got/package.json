@@ -1,0 +1,16 @@
+{
+  "engines": {
+    "node": "^7.6.0"
+  },
+  "name": "@maxdome/health-got",
+  "version": "0.0.0",
+  "description": "",
+  "repository": "maxdome/maxdome-node",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "got": "^8.0.2"
+  }
+}
