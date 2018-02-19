@@ -23,6 +23,7 @@
     "@maxdome/env": "^1.1.1",
     "@maxdome/exception-handling": "^1.0.0",
     "@maxdome/express": "^2.1.5",
+    "@maxdome/health": "^1.0.0",
     "@maxdome/logging": "^2.1.1",
     "@maxdome/logging-middleware": "^2.1.1",
     "@maxdome/swagger": "^4.1.1",
