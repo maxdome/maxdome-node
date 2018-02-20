@@ -30,7 +30,7 @@ Example express application contains all packages and constrains adopting the En
 
 * Not yet used by us
 * Migrations as part of the app
-* Covered by e.g. [knex](http://knexjs.org/)
+* Covered by e.g. [knex migrations](http://knexjs.org/#Migrations)
 
 ### Configuration
 
