@@ -3,7 +3,7 @@
   "engines": {
     "node": "^7.6.0"
   },
-  "name": "@maxdome/template",
+  "name": "@maxdome/name",
   "version": "1.0.0",
   "description": "",
   "publishConfig": {
@@ -13,7 +13,7 @@
   "scripts": {
     "dev": "nodemon",
     "fmt": "maxdome-prettier",
-    "start": "node src/web.js",
+    "start": "node src/server.js",
     "test": "npm run test:unit && npm run test:integration && npm run test:security",
     "test:integration": "mocha --recursive test/integration",
     "test:security": "nsp check",
