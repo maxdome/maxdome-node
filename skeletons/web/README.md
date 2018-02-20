@@ -1,0 +1,66 @@
+# Web Skeleton
+
+Example express application contains all packages and constrains adopting the Engineering Guidelines of maxdome and the Team Guidelines of Content Engineering.
+
+## Engineering Guidelines
+
+### Healthcheck (`GET /health`)
+
+* Status code 2xx/5xx is needed for the ELB
+* Body with the details of the different checked parts in the [Spring Boot format](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-monitoring.html#production-ready-health-access-restrictions) for debugging
+* Covered by [@maxdome/health](https://www.npmjs.com/package/@maxdome/health)
+
+### API Documentation (`GET /docs`)
+
+* All routes defined with the requests and responses
+* Preferred format: [Swagger](https://swagger.io/)
+* Covered by [@maxdome/swagger](https://www.npmjs.com/package/@maxdome/swagger)
+
+### Logging
+
+* stdout/stderr is used by the app, it will be streamed from EBS to CloudWatch
+* Different log level should be supported and smart settings for the environments
+* Covered by:
+  * [@maxdome/logging](https://www.npmjs.com/package/@maxdome/logging) for the log level and the output format
+  * [@maxdome/logging-middlewares](https://www.npmjs.com/package/@maxdome/logging-middleware) middlewares for log all requests and errors
+  * [@maxdome/exception-handling](https://www.npmjs.com/package/@maxdome/exception-handling) to log all uncaught exceptions
+
+### Schemaupdates
+
+* Not yet used by us
+* Migrations as part of the app
+* Covered by e.g. [knex](http://knexjs.org/)
+
+### Configuration
+
+* Environment depending configs and useful application configs independly changeable by environment variables
+* Local development supported by `.env` file
+* Covered by [@maxdome/env](https://www.npmjs.com/package/@maxdome/env)
+
+## Team Guidelines
+
+### Local development
+
+* Installation by `npm i`
+* Environment initialization by `npm run env`
+* Run by `npm run dev` using [nodemon](https://www.npmjs.com/package/nodemon)
+
+### Code Style
+
+* Formatting by `npm run fmt`
+* Covered by [@maxdome/prettier](https://www.npmjs.com/package/@maxdome/prettier)
+
+### Versioning
+
+* [Semantic Versioning](https://semver.org/)
+* Version of deployed app accessible by `GET /version`
+* Covered by [@maxdome/version](https://www.npmjs.com/package/@maxdome/version)
+
+### Testing
+
+* Run by `npm test`
+* Splitting of unit and integration tests using [mocha](https://www.npmjs.com/package/mocha)
+* Additionally using some helper to write tests:
+  * [power-assert](https://www.npmjs.com/package/power-assert) or [chai](https://www.npmjs.com/package/chai) for assertion
+  * [sinon](https://www.npmjs.com/package/sinon) for stubs and mocks
+* Security checks by using [nsp](https://www.npmjs.com/package/nsp)
