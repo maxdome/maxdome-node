@@ -23,7 +23,7 @@ Example express application contains all packages and constrains adopting the En
 * Different log level should be supported and smart settings for the environments
 * Covered by:
   * [@maxdome/logging](https://www.npmjs.com/package/@maxdome/logging) for the log level and the output format
-  * [@maxdome/logging-middlewares](https://www.npmjs.com/package/@maxdome/logging-middleware) middlewares for log all requests and errors
+  * [@maxdome/logging-middlewares](https://www.npmjs.com/package/@maxdome/logging-middleware) for log all requests and errors
   * [@maxdome/exception-handling](https://www.npmjs.com/package/@maxdome/exception-handling) to log all uncaught exceptions
 
 ### Schemaupdates
