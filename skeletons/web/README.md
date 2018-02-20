@@ -8,6 +8,7 @@ Example express application contains all packages and constrains adopting the En
 
 * Status code 2xx/5xx is needed for the ELB
 * Body with the details of the different checked parts in the [Spring Boot format](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-monitoring.html#production-ready-health-access-restrictions) for debugging
+* Checks shouldn't cascade, so an app can check his own internal dependencies (e.g. cache/database) if needed to run, but not other apps
 * Covered by [@maxdome/health](https://www.npmjs.com/package/@maxdome/health)
 
 ### API Documentation (`GET /docs`)
