@@ -64,4 +64,5 @@ Example express application contains all packages and constrains adopting the En
 * Additionally using some helper to write tests:
   * [power-assert](https://www.npmjs.com/package/power-assert) or [chai](https://www.npmjs.com/package/chai) for assertion
   * [sinon](https://www.npmjs.com/package/sinon) for stubs and mocks
+  * [supertest](https://www.npmjs.com/package/supertest) to test express routes
 * Security checks by using [nsp](https://www.npmjs.com/package/nsp)
