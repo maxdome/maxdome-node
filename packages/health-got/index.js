@@ -8,6 +8,6 @@ module.exports = data => {
   data.options = Object.assign({ json: true }, data.options);
   return {
     check: () => got[data.method](data.url, data.options),
-    { url: data.url },
+    data: { url: data.url },
   };
 };
