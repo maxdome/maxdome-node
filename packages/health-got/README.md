@@ -3,10 +3,9 @@ Provides check function for [`health`](http://npmjs.com/@maxdome/health) perform
 # Usage
 
 ```
-const health = require('@maxdome/health')({
+app.get('/health', require('@maxdome/health').controller({
   example: require('@maxdome/health-got')('http://example.com/'),
-});
-app.get('/health', health);
+}));
 ```
 
 # Example response

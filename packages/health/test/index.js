@@ -5,7 +5,7 @@ const request = require('supertest');
 describe('packages/health', () => {
   it('should have outcome "UP" without any checks', done => {
     const app = express();
-    app.get('/health', require('../index')());
+    app.get('/health', require('../index').controller());
     request(app)
       .get('/health')
       .set('Accept', 'application/json')
@@ -20,7 +20,7 @@ describe('packages/health', () => {
 
   it('should have outcome "UP" with positive checks', done => {
     const app = express();
-    app.get('/health', require('../index')({
+    app.get('/health', require('../index').controller({
       a: () => {},
       b: () => {},
     }));
@@ -42,7 +42,7 @@ describe('packages/health', () => {
 
   it('should have outcome "UP" with positive checks and data', done => {
     const app = express();
-    app.get('/health', require('../index')({
+    app.get('/health', require('../index').controller({
       a: { check: () => {}, data: { c: 'd' } },
       b: { check: () => {}, data: { e: 'f' } },
     }));
@@ -64,7 +64,7 @@ describe('packages/health', () => {
 
   it('should have outcome "DOWN" if at least one check throws an error', done => {
     const app = express();
-    app.get('/health', require('../index')({
+    app.get('/health', require('../index').controller({
       a: () => {
         throw new Error('test');
       },

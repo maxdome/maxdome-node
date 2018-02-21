@@ -3,10 +3,9 @@ Provides an `/health` endpoint response with the health of the app in the [Sprin
 # Usage
 
 ```
-const health = require('@maxdome/health')({
+app.get('/health', require('@maxdome/health').controller({
   example: () => {},
-});
-app.get('/health', health);
+}));
 ```
 
 # Example response

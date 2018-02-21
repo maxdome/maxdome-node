@@ -1,4 +1,4 @@
-module.exports = (healths = {}) => async (req, res) => {
+module.exports.controller = (healths = {}) => async (req, res) => {
   const checks = await Promise.all(
     Object.keys(healths).map(async name => {
       let health = healths[name];
