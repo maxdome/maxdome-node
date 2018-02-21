@@ -12,7 +12,7 @@
   "main": "src/server.js",
   "scripts": {
     "dev": "nodemon",
-    "env": "cp .env.example .env",
+    "env": "sed \"s/ #info//\" .env.example > .env",
     "fmt": "maxdome-prettier",
     "start": "node src/server.js",
     "test": "npm run test:unit && npm run test:integration && npm run test:security",
