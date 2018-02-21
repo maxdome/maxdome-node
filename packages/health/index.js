@@ -7,7 +7,7 @@ module.exports.controller = (healths = {}) => async (req, res) => {
       }
       let status = 'UP';
       try {
-        health.check();
+        await health.check();
       } catch (e) {
         status = 'DOWN';
       }

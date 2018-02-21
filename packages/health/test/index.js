@@ -85,4 +85,32 @@ describe('packages/health', () => {
         done();
       });
   });
+
+  it('should support async checks', done => {
+    const app = express();
+    app.get('/health', require('../index').controller({
+      a: () => {
+        return new Promise((resolve, reject) => {
+          process.nextTick(() => {
+            reject(new Error('test'));
+          });
+        });
+      },
+      b: () => {},
+    }));
+    request(app)
+      .get('/health')
+      .set('Accept', 'application/json')
+      .expect('Content-Type', /json/)
+      .expect(500)
+      .then(res => {
+        const expected = {
+          status: 'DOWN',
+          a: { status: 'DOWN' },
+          b: { status: 'UP' },
+        };
+        assert.deepEqual(res.body, expected);
+        done();
+      });
+  });
 });
