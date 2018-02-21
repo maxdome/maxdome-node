@@ -10,7 +10,7 @@ const app = require('@maxdome/express')();
 app.use(require('@maxdome/logging-middleware')({ logging }));
 
 app.use('/docs', require('@maxdome/swagger')({ config: 'docs/swagger.yml' }));
-app.get('/health', require('@maxdome/health')());
+app.get('/health', require('@maxdome/health').controller());
 app.get('/version', require('@maxdome/version').controller());
 
 app.use('/api', require('./api')());
