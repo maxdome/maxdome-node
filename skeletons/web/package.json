@@ -28,7 +28,7 @@
     "@maxdome/logging": "^2.1.1",
     "@maxdome/logging-middleware": "^2.1.1",
     "@maxdome/swagger": "^4.1.1",
-    "@maxdome/version": "^1.1.1",
+    "@maxdome/version": "^1.1.2",
     "express": "^4.16.2"
   },
   "devDependencies": {
