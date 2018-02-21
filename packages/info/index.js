@@ -8,10 +8,7 @@ const path = require('path');
 module.exports = () => {
   const router = new express.Router();
 
-  const version = require('@maxdome/version')();
-  router.get('/version', (req, res) => {
-    res.send(version);
-  });
+  router.get('/version', require('@maxdome/version').controller());
 
   let env = {};
   try {
@@ -31,7 +28,7 @@ module.exports = () => {
       throw e;
     }
   }
-  
+
   router.get('/env', (req, res) => {
     res.send(env);
   });
