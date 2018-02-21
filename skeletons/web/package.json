@@ -25,10 +25,10 @@
     "@maxdome/exception-handling": "^1.0.0",
     "@maxdome/express": "^2.1.5",
     "@maxdome/health": "^2.0.0",
+    "@maxdome/info": "^3.0.6",
     "@maxdome/logging": "^2.1.1",
     "@maxdome/logging-middleware": "^2.1.1",
     "@maxdome/swagger": "^4.1.1",
-    "@maxdome/version": "^1.1.2",
     "express": "^4.16.2"
   },
   "devDependencies": {

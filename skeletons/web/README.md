@@ -38,6 +38,10 @@ Example express application contains all packages and constrains adopting the En
 * Local development supported by `.env` file
 * Covered by [@maxdome/env](https://www.npmjs.com/package/@maxdome/env)
 
+### Versioning
+
+* [Semantic Versioning](https://semver.org/)
+
 ## Team Guidelines
 
 ### Local development
@@ -51,11 +55,11 @@ Example express application contains all packages and constrains adopting the En
 * Formatting by `npm run fmt`
 * Covered by [@maxdome/prettier](https://www.npmjs.com/package/@maxdome/prettier)
 
-### Versioning
+### Info
 
-* [Semantic Versioning](https://semver.org/)
-* Version of deployed app accessible by `GET /version`
-* Covered by [@maxdome/version](https://www.npmjs.com/package/@maxdome/version)
+* Version of deployed app accessible by `GET /info/version`
+* Informative environment variables accessible by `GET /info/env`
+* Covered by [@maxdome/info](https://www.npmjs.com/package/@maxdome/info)
 
 ### Testing
 
