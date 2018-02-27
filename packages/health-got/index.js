@@ -7,6 +7,6 @@ module.exports = data => {
   data.method = data.method || 'get';
   return {
     check: () => got[data.method](data.url, data.options),
-    data: { url: data.url },
+    data: { method: data.method, url: data.url },
   };
 };
