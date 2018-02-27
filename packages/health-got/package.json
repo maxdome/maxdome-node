@@ -3,7 +3,7 @@
     "node": "^7.6.0"
   },
   "name": "@maxdome/health-got",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "",
   "repository": "maxdome/maxdome-node",
   "license": "MIT",
