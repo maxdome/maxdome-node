@@ -3,7 +3,7 @@ const Redis = require('ioredis');
 module.exports = url => {
   const redis = new Redis(url);
 
-  redis.setJSON = async () => {
+  redis.setJSON = async (...arguments) => {
     arguments[1] = JSON.stringify(arguments[1]);
     if (typeof arguments[2] === 'object' && arguments[2].asSeconds) {
       arguments[2] = parseInt(arguments[2].asSeconds());
