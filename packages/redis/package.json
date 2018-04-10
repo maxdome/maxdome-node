@@ -3,7 +3,7 @@
     "node": "^7.6.0"
   },
   "name": "@maxdome/redis",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "",
   "publishConfig": {
     "access": "public"
