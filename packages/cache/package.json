@@ -2,13 +2,10 @@
   "engines": {
     "node": "^7.6.0"
   },
-  "name": "@maxdome/redis",
-  "version": "2.0.1",
+  "name": "@maxdome/cache",
+  "version": "0.0.0",
   "description": "",
   "publishConfig": {
     "access": "public"
-  },
-  "dependencies": {
-    "ioredis": "^3.2.2"
   }
 }
