@@ -9,7 +9,6 @@
     "access": "public"
   },
   "dependencies": {
-    "redis": "^2.7.1",
-    "redis-clustr": "^1.5.2"
+    "ioredis": "^3.2.2"
   }
 }
