@@ -12,6 +12,9 @@ module.exports = url => {
       arguments[3] = parseInt(arguments[2]);
       arguments[2] = 'EX';
     }
+    if (typeof arguments[2] === 'undefined') {
+      arguments = [arguments[0], arguments[1]];
+    }
     return await redis.set.apply(redis, arguments);
   }
 
