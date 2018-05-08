@@ -1,4 +1,4 @@
-module.exports = client => async (key, get, options) => {
+module.exports = client => async (key, get, options = {}) => {
   if ((typeof options === 'object' && options.asSeconds) || typeof options === 'number') {
     options = { expire: options };
   }
