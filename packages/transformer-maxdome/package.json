@@ -3,13 +3,13 @@
     "node": "^7.6.0"
   },
   "name": "@maxdome/transformer-maxdome",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@maxdome/request-maxdome": "^4.2.4",
+    "@maxdome/request-maxdome": "^5.0.0",
     "@maxdome/transformer": "^1.1.2"
   }
 }
