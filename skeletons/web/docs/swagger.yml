@@ -11,6 +11,8 @@ consumes:
 paths:
   /api:
     get:
+      tags:
+        - "api"
       summary: ""
       responses:
         204:
