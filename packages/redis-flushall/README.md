@@ -3,10 +3,12 @@
 ## The controller
 
 ```javascript
-app.post('/debug/redis-flushall', require('@maxdome/redis-flushall').controller({
-  redis,
-  secret: process.env.REDIS_FLUSHALL_SECRET,
-}));
+if (process.env.REDIS_FLUSHALL_SECRET) {
+  app.post('/debug/redis-flushall', require('@maxdome/redis-flushall').controller({
+    redis,
+    secret: process.env.REDIS_FLUSHALL_SECRET,
+  }));
+}
 ```
 
 ## Only the flushall
