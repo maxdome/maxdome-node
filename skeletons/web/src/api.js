@@ -6,7 +6,7 @@ module.exports = () => {
   router.use(bodyParser.json());
 
   router.get('/', (req, res) => {
-    res.send();
+    res.sendStatus(204);
   });
 
   return router;

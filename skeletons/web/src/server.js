@@ -12,7 +12,7 @@ module.exports = async () => {
 
   app.use('/docs', require('@maxdome/swagger')({ config: 'docs/swagger.yml' }));
   app.get('/health', require('@maxdome/health').controller());
-  app.use('/info', require('@maxdome/info')());
+  app.use('/version', require('@maxdome/version').controller());
 
   app.use('/api', require('./api')());
 

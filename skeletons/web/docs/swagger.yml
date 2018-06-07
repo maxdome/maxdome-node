@@ -3,17 +3,25 @@ info:
   description: ""
   version: "0.0.0"
   title: "Web Skeleton"
-basePath: "/api"
+basePath: "/"
 produces:
   - "application/json"
 consumes:
   - 'application/json'
 paths:
-  /:
+  /api:
     get:
       summary: ""
       responses:
+        204:
+          description: "OK"
+        500:
+          description: "Internal Server Error"
+  /version:
+    get:
+      summary: "Response the version of the app"
+      responses:
         200:
           description: "OK"
-        400:
-          description: "Bad Request"
+        500:
+          description: "Internal Server Error"
