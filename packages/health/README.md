@@ -20,3 +20,23 @@ app.get('/health', require('@maxdome/health').controller({
 # Plugins
 
 * Check with HTTP requests: [`health-got`](https://www.npmjs.com/package/@maxdome/health-got)
+
+# Swagger
+
+```yaml
+paths:
+  /health:
+    get:
+      summary: "Healthcheck if the app is running correctly"
+      responses:
+        200:
+          description: "OK"
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                example: "UP"
+        500:
+          description: "Internal Server Error"
+```

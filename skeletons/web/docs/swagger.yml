@@ -19,11 +19,28 @@ paths:
           description: "OK"
         500:
           description: "Internal Server Error"
+  /health:
+    get:
+      summary: "Healthcheck if the app is running correctly"
+      responses:
+        200:
+          description: "OK"
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                example: "UP"
+        500:
+          description: "Internal Server Error"
   /version:
     get:
       summary: "Response the version of the app"
       responses:
         200:
           description: "OK"
+          schema:
+            type: string
+            example: "1.0.0"
         500:
           description: "Internal Server Error"
