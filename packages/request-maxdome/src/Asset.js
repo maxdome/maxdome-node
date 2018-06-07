@@ -75,7 +75,8 @@ class Asset {
     this.duration = data.duration;
     this.fskLevels = data.fskLevelList;
     this.genres = data.genreList
-      .filter(genre => genre.genreType === 'genre' || genre.genreType === '_spielfilm')
+      // `_serie` for series, `_spielfilm` for movies, `genre` for seasons, episodes doesn't have genres
+      .filter(genre => ['_serie', '_spielfilm', 'genre'].includes(genre.genreType))
       .map(genre => genre.value);
     this.languages = data.languageList;
     this.url = `${protocol}://${hostnames.package}/${data.id}`;
