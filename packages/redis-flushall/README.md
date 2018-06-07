@@ -5,7 +5,7 @@
 ```javascript
 app.post('/debug/redis-flushall', require('@maxdome/redis-flushall').controller({
   redis,
-  secret: process.env.SECRET,
+  secret: process.env.REDIS_FLUSHALL_SECRET,
 }));
 ```
 
