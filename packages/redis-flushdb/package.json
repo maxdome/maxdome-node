@@ -2,8 +2,8 @@
   "engines": {
     "node": "^7.6.0"
   },
-  "name": "@maxdome/redis-flushall",
-  "version": "1.0.2",
+  "name": "@maxdome/redis-flushdb",
+  "version": "0.0.0",
   "description": "",
   "publishConfig": {
     "access": "public"
