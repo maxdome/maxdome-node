@@ -29,7 +29,7 @@ class RedisMock {
   }
 }
 
-describe.only('/packages/redis-flushdb', () => {
+describe('/packages/redis-flushdb', () => {
   let redis;
   beforeEach(() => {
     redis = new RedisMock();
