@@ -10,7 +10,12 @@
   "publishConfig": {
     "access": "public"
   },
+  "scripts": {
+    "build": "babel index.js -o es5.js"
+  },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "express": "^4.16.2",
     "supertest": "^3.0.0"
   }
