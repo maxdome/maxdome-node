@@ -3,7 +3,7 @@
     "node": "^7.6.0"
   },
   "name": "@maxdome/health-mongoskin",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "",
   "repository": "maxdome/maxdome-node",
   "license": "MIT",
