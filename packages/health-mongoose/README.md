@@ -4,7 +4,7 @@ Provides check function for [`health`](http://npmjs.com/@maxdome/health) checkin
 
 ```
 app.get('/health', require('@maxdome/health').controller({
-  db: require('@dnode/health-mongoose')(mongoose),
+  db: require('@dnode/health-mongoose')({ db }),
 }));
 ```
 
