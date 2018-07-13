@@ -1,5 +1,3 @@
-[![dependencies | 1 | 61](https://img.shields.io/badge/dependencies-1%20|%2061-blue.svg)](DEPENDENCIES.md)
-
 # Usage
 
 **Attention**: `@dnode/request-maxdome` will use several information from the `package.json` and add them to the headers. This makes it easier to identify the source of the request in the logs of maxdome if there are issues.
