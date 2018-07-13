@@ -1,8 +1,7 @@
 const AssetsOptions = require('./AssetsOptions');
 const MaxdomeErrorLogger = require('./MaxdomeErrorLogger');
 const MaxdomeOptions = require('./MaxdomeOptions');
-const RequestBuilder = require('@maxdome/request').RequestBuilder;
-const TipOfTheDaysOptions = require('./TipOfTheDaysOptions');
+const RequestBuilder = require('@dnode/request').RequestBuilder;
 
 module.exports = ({
   assetOptions: assetOptions = {
@@ -15,8 +14,6 @@ module.exports = ({
   log,
   logger,
   maxdomeOptions: maxdomeOptions = {
-    apikey: process.env.MAXDOME_APIKEY,
-    appid: process.env.MAXDOME_APPID,
     hostname: process.env.MAXDOME_HOSTNAME,
     protocol: process.env.MAXDOME_PROTOCOL,
     url: process.env.MAXDOME_URL,
@@ -24,5 +21,4 @@ module.exports = ({
 } = {}) =>
   new RequestBuilder(new MaxdomeOptions(maxdomeOptions))
     .addErrorLogger(new MaxdomeErrorLogger({ log, logger }))
-    .setOptions('assets', new AssetsOptions(assetOptions))
-    .setOptions('tipOfTheDays', new TipOfTheDaysOptions());
+    .setOptions('assets', new AssetsOptions(assetOptions));
