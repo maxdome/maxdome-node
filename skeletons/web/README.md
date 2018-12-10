@@ -41,6 +41,8 @@ Example express application contains all packages and constrains adopting the En
 ### Versioning
 
 * [Semantic Versioning](https://semver.org/)
+* Different versioning of the source (package.json) and the API (docs/swagger.yml)
+* Version of deployed app accessible by `GET /version`
 
 ## Team Guidelines
 
@@ -52,14 +54,7 @@ Example express application contains all packages and constrains adopting the En
 
 ### Code Style
 
-* Formatting by `npm run fmt`
-* Covered by [@maxdome/prettier](https://www.npmjs.com/package/@maxdome/prettier)
-
-### Info
-
-* Version of deployed app accessible by `GET /info/version`
-* Informative environment variables accessible by `GET /info/env`
-* Covered by [@maxdome/info](https://www.npmjs.com/package/@maxdome/info)
+* Linting by `npm run lint`
 
 ### Testing
 
@@ -69,4 +64,4 @@ Example express application contains all packages and constrains adopting the En
   * [power-assert](https://www.npmjs.com/package/power-assert) or [chai](https://www.npmjs.com/package/chai) for assertion
   * [sinon](https://www.npmjs.com/package/sinon) for stubs and mocks
   * [supertest](https://www.npmjs.com/package/supertest) to test express routes
-* Security checks by using [nsp](https://www.npmjs.com/package/nsp)
+* Security checks by using `npm audit`

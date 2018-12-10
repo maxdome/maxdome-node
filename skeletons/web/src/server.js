@@ -7,7 +7,7 @@ module.exports = async () => {
   require('@maxdome/exception-handling')({ logging });
   const appLogger = logging('app');
   appLogger.info('initializing server');
-  const app = require('@maxdome/express')();
+  const app = require('express')();
   app.use(require('@maxdome/logging-middleware')({ logging }));
 
   app.use('/docs', require('@maxdome/swagger')({ config: 'docs/swagger.yml' }));
