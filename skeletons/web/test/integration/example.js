@@ -1,7 +1,7 @@
-const assert = require('power-assert');
+const assert = require('power-assert')
 
 describe('integration', () => {
   it('should work', () => {
-    assert(true);
-  });
-});
+    assert(true)
+  })
+})
