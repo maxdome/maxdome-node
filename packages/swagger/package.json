@@ -11,7 +11,7 @@
   "dependencies": {
     "@maxdome/version": "^1.1.4",
     "express": "^4.15.2",
-    "swagger-parser": "^3.4.2",
-    "swagger-ui-dist": "^3.4.5"
+    "swagger-parser": "^6.0.5",
+    "swagger-ui-dist": "^3.20.8"
   }
 }
