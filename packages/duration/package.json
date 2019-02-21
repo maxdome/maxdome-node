@@ -1,7 +1,4 @@
 {
-  "engines": {
-    "node": "^7.6.0"
-  },
   "name": "@maxdome/duration",
   "version": "3.0.0",
   "description": "",

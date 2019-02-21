@@ -1,7 +1,4 @@
 {
-  "engines": {
-    "node": "^7.6.0"
-  },
   "name": "@maxdome/parse-duration",
   "version": "1.4.3",
   "description": "",

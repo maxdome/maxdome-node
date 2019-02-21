@@ -1,7 +1,4 @@
 {
-  "engines": {
-    "node": "^7.6.0"
-  },
   "name": "@maxdome/throttle",
   "version": "1.2.0",
   "description": "",

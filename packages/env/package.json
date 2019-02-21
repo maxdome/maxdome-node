@@ -1,7 +1,4 @@
 {
-  "engines": {
-    "node": "^7.6.0"
-  },
   "name": "@maxdome/env",
   "version": "1.1.1",
   "description": "",

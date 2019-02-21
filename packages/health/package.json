@@ -1,7 +1,4 @@
 {
-  "engines": {
-    "node": "^7.6.0"
-  },
   "name": "@maxdome/health",
   "version": "2.1.0",
   "description": "",

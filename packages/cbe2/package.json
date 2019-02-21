@@ -1,7 +1,4 @@
 {
-  "engines": {
-    "node": "^7.6.0"
-  },
   "name": "@maxdome/cbe2",
   "version": "1.0.2",
   "description": "",
