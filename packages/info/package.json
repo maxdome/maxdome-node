@@ -1,12 +1,12 @@
 {
   "name": "@maxdome/info",
-  "version": "3.0.8",
+  "version": "3.0.9",
   "description": "",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@maxdome/version": "^1.1.4",
+    "@maxdome/version": "^1.1.5",
     "express": "^4.15.2",
     "lodash.pick": "^4.4.0"
   }

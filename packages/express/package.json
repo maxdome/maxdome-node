@@ -1,6 +1,6 @@
 {
   "name": "@maxdome/express",
-  "version": "2.1.5",
+  "version": "2.1.6",
   "description": "",
   "publishConfig": {
     "access": "public"
